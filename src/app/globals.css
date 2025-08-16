@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globales */
+html, body {
+  @apply bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 text-white antialiased scroll-smooth;
+}
+
+::selection {
+  @apply bg-blue-600 text-white;
+}
+
+/* Helpers */
+.container-padded {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent;
+}
+
+.glass {
+  @apply bg-white/80 backdrop-blur-md shadow-lg;
+}
+
+.btn-focus {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2;
+}
+
+/* Animaciones sencillas on-scroll */
+.animate-in {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  transition: opacity .5s ease, transform .6s cubic-bezier(0.22,1,0.36,1);
+}
+.animate-in.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Card base */
+.card {
+  @apply bg-white border border-gray-100 rounded-2xl shadow-sm;
+}
+.card-hover {
+  @apply transition-all hover:shadow-xl hover:-translate-y-0.5;
+}
+
+/* Animación para scroll horizontal infinito de logos */
+@keyframes scroll-logos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll-logos {
+  animation: scroll-logos 30s linear infinite;
+  width: max-content;
+  min-width: 200%;
+  display: flex;
+}
+
+/* Animaciones y estilos para Hero */
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); }
+}
+@keyframes rotate-slow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-100vh); }
+}
+@keyframes slide-left {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scroll-infinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+.logo-card {
+  background: #ffffff;
+  isolation: isolate;
+}
+.animate-gradient-x {
+  animation: gradient-x 6s ease infinite;
+  background-size: 200% 200%;
+}
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+.animate-rotate-slow {
+  animation: rotate-slow 30s linear infinite;
+}
+.animate-float {
+  animation: float linear infinite;
+}
+.animate-slide-left {
+  animation: slide-left 0.6s ease-out forwards;
+}
+.animate-slide-right {
+  animation: slide-right 0.6s ease-out forwards;
+}
+.animate-scroll-infinite {
+  animation: scroll-infinite 30s linear infinite;
+}
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+.animation-delay-2000 {
+  animation-delay: 2000ms;
+}
+
+/* SOLO en móvil */
+@media (max-width: 640px) {
+  .logo-card {
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+    border-radius: 0.375rem !important;
+  }
+  .logo-card img {
+    height: 16px !important;
+  }
+  .animate-scroll-infinite {
+    animation-duration: 3s !important;
+  }
+  .logo-carousel-container {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+}
+
+/* Textos */
+.text-gray-900, .text-gray-700, .text-gray-600 {
+  color: #ededed !important;
+}
+.text-blue-600, .text-blue-800 {
+  color: #60a5fa !important;
+}
+
+/* Botones */
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+.btn-secondary {
+  @apply bg-transparent border border-blue-400 text-blue-400 hover:bg-blue-600 hover:text-white;
+}
+
+/* Cards y chat */
+.card, .bg-white {
+  background: #181f2a !important;
+  color: #ededed !important;
+  border-color: #23304a !important;
+}
+.shadow-lg, .shadow-xl, .shadow-2xl {
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.45);
+}
