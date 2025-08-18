@@ -273,8 +273,8 @@ export default function Navbar() {
             ? 'opacity-100 translate-y-0 pointer-events-auto' 
             : 'opacity-0 -translate-y-4 pointer-events-none'
         }`}>
-          <div className="bg-[#000412]/92 backdrop-blur-xl border-t border-white/20 shadow-[0_30px_60px_rgba(59,130,246,0.4)] border-l border-r border-white/15">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#000412]/95 via-[#000620]/90 to-[#000824]/95 pointer-events-none" />
+          <div className="bg-[#0a0a0a] backdrop-blur-xl border-t border-white/20 shadow-[0_30px_60px_rgba(59,130,246,0.4)] border-l border-r border-white/15">
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/95 via-[#0d0d0d]/90 to-[#101010]/95 pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-cyan-500/5 pointer-events-none" />
             <div className="absolute inset-0 overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-blue-600/10 to-transparent" />
@@ -299,7 +299,7 @@ export default function Navbar() {
                       
                       <div className="relative flex items-center gap-3 px-4 py-3">
                         {Icon && (
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-700/20 to-gray-600/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <Icon className="h-5 w-5 text-cyan-400" />
                           </div>
                         )}

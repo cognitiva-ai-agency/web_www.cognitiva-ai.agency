@@ -39,7 +39,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen pt-24 pb-32 sm:pb-20 lg:pb-56 bg-[#0a0a0a] text-white overflow-hidden"
+      className="relative min-h-screen pt-24 pb-40 sm:pb-32 lg:pb-64 bg-[#0a0a0a] text-white overflow-hidden"
       aria-label="Multiplica tus ventas con Agentes de IA que trabajan 24/7">
       
       <div aria-hidden className="absolute inset-0 -z-10">
@@ -114,9 +114,9 @@ export default function Hero() {
               })}
             </div>
 
-            <div className="grid grid-cols-2 gap-4 pt-6 pb-8 max-w-2xl mx-auto sm:max-w-md sm:mx-0">
+            <div className="grid grid-cols-2 gap-4 pt-6 pb-12 max-w-2xl mx-auto sm:max-w-md sm:mx-0 relative z-20">
               <div className="flex justify-center">
-                <div className="relative group">
+                <div className="relative group z-30">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full blur-xl opacity-70 group-hover:opacity-100 transition-all duration-500" />
                   <Button
                     as="a"
@@ -129,7 +129,7 @@ export default function Hero() {
               </div>
 
               <div className="flex justify-center">
-                <div className="relative group">
+                <div className="relative group z-30">
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-full blur-xl opacity-50 group-hover:opacity-100 transition-all duration-500" />
                   <a
                     href={BRAND.whatsappLink}
@@ -227,7 +227,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="mt-8 lg:mt-0 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 py-6 lg:py-8 border-t border-white/5 bg-gradient-to-t from-black/50 to-transparent backdrop-blur-sm">
+      <div className="mt-16 lg:mt-20 py-6 lg:py-8 border-t border-white/5 bg-gradient-to-t from-black/50 to-transparent backdrop-blur-sm relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-white/10 to-white/5 backdrop-blur border border-white/10 mb-3">
