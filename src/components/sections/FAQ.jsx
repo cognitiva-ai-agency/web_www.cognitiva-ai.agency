@@ -20,7 +20,7 @@ export default function FAQ() {
   const onKeyToggle = (e, idx) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      toggle(idx);
+      toggleCard(idx);
     }
   };
 
