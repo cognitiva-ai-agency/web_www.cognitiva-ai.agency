@@ -45,7 +45,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative py-32 bg-[#0a0a0a] overflow-hidden"
+      className="relative py-16 sm:py-24 md:py-32 bg-[#0a0a0a] overflow-hidden"
       aria-labelledby="faq-title"
     >
       {/* Efectos de fondo interactivos */}
@@ -92,35 +92,36 @@ export default function FAQ() {
       </div>
 
       <div ref={ref} className="container-padded relative animate-in max-w-5xl">
-        {/* Header mejorado */}
-        <div className="text-center mb-16">
-          {/* Badge iluminado */}
-          <div className="inline-block mb-8">
+        {/* Header ultra-compacto para móvil */}
+        <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16">
+          {/* Badge ultra-compacto para móvil */}
+          <div className="inline-block mb-3 sm:mb-4 md:mb-6 lg:mb-8">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-500 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-white/[0.08] to-white/[0.04] backdrop-blur-xl border border-white/10">
-                <MessageCircle className="h-5 w-5 text-indigo-400 animate-pulse" />
-                <span className="text-sm font-light tracking-wide text-indigo-300">
-                  Resolvemos todas tus dudas
+              <div className="relative inline-flex items-center gap-1.5 sm:gap-2 md:gap-3 px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 lg:py-4 rounded-full bg-gradient-to-r from-white/[0.08] to-white/[0.04] backdrop-blur-xl border border-white/10">
+                <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-indigo-400 animate-pulse" />
+                <span className="text-xs sm:text-sm font-light tracking-wide text-indigo-300">
+                  <span className="hidden sm:inline">Resolvemos todas tus dudas</span>
+                  <span className="sm:hidden">Resolvemos dudas</span>
                 </span>
-                <HelpCircle className="h-5 w-5 text-purple-400 animate-pulse" />
+                <HelpCircle className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-purple-400 animate-pulse" />
               </div>
             </div>
           </div>
 
-          <h2 id="faq-title" className="text-5xl md:text-7xl font-thin tracking-tight text-white mb-4">
+          <h2 id="faq-title" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-thin tracking-tight text-white mb-3 sm:mb-4 px-2 sm:px-0">
             <span className="font-light">Preguntas</span>{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 animate-gradient-x">
               frecuentes
             </span>
           </h2>
-          <p className="text-lg md:text-xl font-light text-blue-200/70 max-w-3xl mx-auto">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light text-blue-200/70 max-w-3xl mx-auto px-4 sm:px-2 md:px-0 leading-tight">
             Todo lo que necesitas saber para tomar la mejor decisión
           </p>
         </div>
 
-        {/* Grid de FAQ responsive - igual que Industrias */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-6 max-w-6xl mx-auto" role="list" aria-label="Preguntas frecuentes">
+        {/* Grid de FAQ ultra-optimizado para móvil */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6 max-w-6xl mx-auto px-2 sm:px-4 md:px-0" role="list" aria-label="Preguntas frecuentes">
           {FAQS.map((faq, idx) => {
             const isExpanded = openIndex === idx;
             const isHovered = hoveredCard === faq.q;
@@ -141,7 +142,7 @@ export default function FAQ() {
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Contenido de la respuesta */}
-                <div className="text-sm font-light text-blue-100/90 leading-relaxed mb-6">
+                <div className="text-xs sm:text-sm font-light text-blue-100/90 leading-relaxed mb-4 sm:mb-6">
                   {typeof faq.a === "string" ? (
                     <p>{faq.a}</p>
                   ) : (
@@ -151,28 +152,28 @@ export default function FAQ() {
                 
                 {/* Badge de info adicional si aplica */}
                 {idx === 0 && (
-                  <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/20">
-                    <Sparkles className="h-4 w-4 text-emerald-400" />
-                    <span className="text-xs font-light text-emerald-300">
+                  <div className="mb-4 sm:mb-6 inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/20">
+                    <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-emerald-400" />
+                    <span className="text-xs font-light text-emerald-300 leading-tight">
                       Implementación récord en el mercado
                     </span>
                   </div>
                 )}
 
-                {/* CTA Button estandarizado */}
+                {/* CTA Button optimizado para móvil */}
                 <a 
                   href="https://wa.me/56932417147?text=Hola%20Cognitiva,%20tengo%20una%20pregunta%20sobre%20sus%20servicios"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group/btn relative w-full block"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-r ${gradient} rounded-2xl blur-md opacity-50 group-hover/btn:opacity-100 transition-opacity duration-300`} />
-                  <div className="relative flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 transition-all duration-300 group-hover/btn:shadow-[0_0_30px_rgba(59,130,246,0.4)]">
-                    <MessageCircle className="h-4 w-4 text-white/90" />
-                    <span className="text-sm font-light text-white">
+                  <div className={`absolute inset-0 bg-gradient-to-r ${gradient} rounded-lg sm:rounded-xl blur-md opacity-50 group-hover/btn:opacity-100 transition-opacity duration-300`} />
+                  <div className="relative flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 transition-all duration-300 group-hover/btn:shadow-[0_0_30px_rgba(59,130,246,0.4)]">
+                    <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4 text-white/90" />
+                    <span className="text-xs sm:text-sm font-light text-white">
                       Pregunta personalizada
                     </span>
-                    <ChevronDown className="h-4 w-4 text-white/90 rotate-[-90deg] group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    <ChevronDown className="h-3 w-3 sm:h-4 sm:w-4 text-white/90 rotate-[-90deg] group-hover/btn:translate-x-1 transition-transform duration-300" />
                   </div>
                 </a>
               </CollapsibleCard>
@@ -180,9 +181,9 @@ export default function FAQ() {
           })}
         </div>
 
-        {/* CTA final - CONVERTIDO A ENLACE */}
-        <div className="mt-16 text-center">
-          <p className="text-sm font-light text-blue-200/60 mb-6">
+        {/* CTA final optimizado para móvil */}
+        <div className="mt-8 sm:mt-12 md:mt-16 text-center px-4 sm:px-0">
+          <p className="text-xs sm:text-sm font-light text-blue-200/60 mb-4 sm:mb-6">
             ¿Tienes alguna pregunta específica?
           </p>
           <div className="inline-block">
@@ -192,20 +193,22 @@ export default function FAQ() {
                 href="https://wa.me/56932417147?text=Hola%20Cognitiva,%20quiero%20saber%20m%C3%A1s"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative px-10 py-5 rounded-full bg-gradient-to-r from-indigo-600/90 to-purple-600/90 backdrop-blur-xl border border-white/20 transition-all duration-500 group-hover:shadow-[0_0_50px_rgba(99,102,241,0.5)] group-hover:scale-105 inline-block"
+                className="relative px-4 sm:px-6 md:px-10 py-2.5 sm:py-4 md:py-5 rounded-full bg-gradient-to-r from-indigo-600/90 to-purple-600/90 backdrop-blur-xl border border-white/20 transition-all duration-500 group-hover:shadow-[0_0_50px_rgba(99,102,241,0.5)] group-hover:scale-105 inline-block"
               >
-                <span className="flex items-center gap-3">
-                  <MessageCircle className="h-5 w-5 text-white" />
-                  <span className="text-lg font-light text-white">
-                    Hablar con un experto ahora
+                <span className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
+                  <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
+                  <span className="text-xs sm:text-sm md:text-base lg:text-lg font-light text-white whitespace-nowrap">
+                    <span className="hidden sm:inline">Hablar con un experto ahora</span>
+                    <span className="sm:hidden">Hablar con experto</span>
                   </span>
-                  <ChevronDown className="h-5 w-5 text-white rotate-[-90deg]" />
+                  <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 text-white rotate-[-90deg]" />
                 </span>
               </a>
             </div>
           </div>
-          <p className="mt-4 text-xs font-light text-blue-200/40">
-            Respuesta inmediata • Sin compromiso • Asesoría personalizada
+          <p className="mt-3 sm:mt-4 text-xs font-light text-blue-200/40 px-4 leading-tight">
+            <span className="hidden sm:inline">Respuesta inmediata • Sin compromiso • Asesoría personalizada</span>
+            <span className="sm:hidden">Respuesta inmediata • Sin compromiso</span>
           </p>
         </div>
       </div>

@@ -14,15 +14,15 @@ export default function ToggleButton({
   };
 
   const sizes = {
-    sm: 'w-6 h-6',
-    md: 'w-8 h-8',
-    lg: 'w-10 h-10'
+    sm: 'w-5 h-5 sm:w-6 sm:h-6',
+    md: 'w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8',
+    lg: 'w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10'
   };
 
   const iconSizes = {
-    sm: 'h-3 w-3',
-    md: 'h-4 w-4',
-    lg: 'h-5 w-5'
+    sm: 'h-2.5 w-2.5 sm:h-3 sm:w-3',
+    md: 'h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4',
+    lg: 'h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-4.5 md:w-4.5 lg:h-5 lg:w-5'
   };
 
   return (

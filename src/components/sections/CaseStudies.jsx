@@ -98,13 +98,13 @@ export default function CaseStudies() {
             </div>
           </div>
 
-          <h2 className="text-5xl md:text-7xl font-thin tracking-tight text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-thin tracking-tight text-white mb-4">
             <span className="font-light">Resultados que</span>{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-300 to-rose-400 animate-gradient-x">
               transforman
             </span>
           </h2>
-          <p className="text-lg md:text-xl font-light text-blue-200/70 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light text-blue-200/70 max-w-3xl mx-auto">
             Historias reales de empresas que multiplicaron sus resultados con nuestra tecnología
           </p>
         </header>

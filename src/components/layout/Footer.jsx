@@ -186,24 +186,25 @@ export default function Footer() {
       </div>
 
       <div className="relative border-b border-white/5">
-        <div className="container-padded py-20">
-          <div className="relative rounded-3xl overflow-hidden">
+        <div className="container-padded py-12 sm:py-16 md:py-20">
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-purple-600/20 gradient-xy" />
-            <div className="relative rounded-3xl bg-gradient-to-br from-[#0a0a0a]/90 to-[#0d0d0d]/90 backdrop-blur-xl border border-white/10 p-16 text-center">
-              <div className="inline-block mb-8">
+            <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#0a0a0a]/90 to-[#0d0d0d]/90 backdrop-blur-xl border border-white/10 p-6 sm:p-10 md:p-12 lg:p-16 text-center">
+              <div className="inline-block mb-4 sm:mb-6 md:mb-8">
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-white/[0.1] to-white/[0.05] backdrop-blur-xl border border-white/20">
-                    <Zap className="h-5 w-5 text-cyan-300 animate-pulse" />
-                    <span className="text-sm font-light tracking-wide text-cyan-300">
-                      TECNOLOGÍA DE VANGUARDIA • IA GENERATIVA • MACHINE LEARNING
+                  <div className="relative inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full bg-gradient-to-r from-white/[0.1] to-white/[0.05] backdrop-blur-xl border border-white/20">
+                    <Zap className="h-4 w-4 sm:h-5 sm:w-5 text-cyan-300 animate-pulse" />
+                    <span className="text-xs sm:text-sm font-light tracking-wide text-cyan-300">
+                      <span className="hidden sm:inline">TECNOLOGÍA DE VANGUARDIA • IA GENERATIVA • MACHINE LEARNING</span>
+                      <span className="sm:hidden">IA DE VANGUARDIA</span>
                     </span>
-                    <Bot className="h-5 w-5 text-cyan-300 animate-pulse" style={{ animationDelay: '0.5s' }} />
+                    <Bot className="h-4 w-4 sm:h-5 sm:w-5 text-cyan-300 animate-pulse" style={{ animationDelay: '0.5s' }} />
                   </div>
                 </div>
               </div>
 
-              <h2 className="text-5xl md:text-6xl font-thin mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-thin mb-4 sm:mb-6">
                 <span className="font-light text-white/90">Revoluciona tu negocio con</span>
                 <br />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 gradient-x font-extralight">
@@ -211,13 +212,13 @@ export default function Footer() {
                 </span>
               </h2>
               
-              <p className="text-xl font-light text-blue-200/70 max-w-3xl mx-auto mb-10">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light text-blue-200/70 max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-4">
                 Únete a las empresas líderes que ya multiplicaron sus resultados.
                 <br />
                 <span className="text-cyan-300">Implementación en 7 días • ROI garantizado • Soporte 24/7</span>
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-8">
                 <a
                   href="https://cal.com/www.cognitiva-ai.agency"
                   target="_blank"
@@ -225,11 +226,11 @@ export default function Footer() {
                   className="group relative inline-block"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full blur-xl opacity-70 group-hover:opacity-100 transition-all duration-500" />
-                  <div className="relative px-10 py-5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-light shadow-2xl group-hover:shadow-[0_0_50px_rgba(59,130,246,0.5)] transition-all duration-300 group-hover:scale-105 gradient-x">
-                    <span className="flex items-center gap-3">
-                      <Sparkles className="h-5 w-5" />
-                      <span className="text-lg">Comenzar transformación ahora</span>
-                      <ArrowUpRight className="h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  <div className="relative px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 md:py-5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-light shadow-2xl group-hover:shadow-[0_0_50px_rgba(59,130,246,0.5)] transition-all duration-300 group-hover:scale-105 gradient-x">
+                    <span className="flex items-center gap-2 sm:gap-3">
+                      <Sparkles className="h-4 w-4 sm:h-5 sm:w-5" />
+                      <span className="text-xs sm:text-sm md:text-base lg:text-lg whitespace-nowrap">Comenzar transformación</span>
+                      <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </span>
                   </div>
                 </a>
@@ -240,32 +241,32 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="group relative inline-block"
                 >
-                  <div className="relative px-10 py-5 rounded-full bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-cyan-400/30 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]">
-                    <span className="flex items-center gap-3 text-cyan-300">
-                      <MessageCircle className="h-5 w-5" />
-                      <span className="text-lg font-light">Hablar con un experto ahora</span>
-                      <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <div className="relative px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 md:py-5 rounded-full bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-cyan-400/30 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]">
+                    <span className="flex items-center gap-2 sm:gap-3 text-cyan-300">
+                      <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                      <span className="text-xs sm:text-sm md:text-base lg:text-lg font-light whitespace-nowrap">Hablar con experto</span>
+                      <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>
                 </a>
               </div>
 
-              <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-light text-blue-200/50">
-                <span className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-emerald-400" />
-                  Sin tarjeta de crédito
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 text-xs font-light text-blue-200/50">
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-emerald-400" />
+                  <span className="text-xs">Sin tarjeta</span>
                 </span>
-                <span className="flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-emerald-400" />
-                  Datos 100% seguros
+                <span className="flex items-center gap-1.5">
+                  <Shield className="h-3 w-3 sm:h-4 sm:w-4 text-emerald-400" />
+                  <span className="text-xs">100% seguros</span>
                 </span>
-                <span className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-emerald-400" />
-                  Setup en 24-48h
+                <span className="flex items-center gap-1.5">
+                  <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-emerald-400" />
+                  <span className="text-xs">24-48h setup</span>
                 </span>
-                <span className="flex items-center gap-2">
-                  <Award className="h-4 w-4 text-emerald-400" />
-                  Garantía de satisfacción
+                <span className="flex items-center gap-1.5">
+                  <Award className="h-3 w-3 sm:h-4 sm:w-4 text-emerald-400" />
+                  <span className="text-xs">Garantía</span>
                 </span>
               </div>
             </div>

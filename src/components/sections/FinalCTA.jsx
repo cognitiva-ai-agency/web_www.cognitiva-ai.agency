@@ -51,7 +51,7 @@ export default function FinalCTA() {
   return (
     <section 
       id="cta" 
-      className="relative py-32 bg-[#0a0a0a] overflow-hidden"
+      className="relative py-16 sm:py-24 md:py-32 bg-[#0a0a0a] overflow-hidden"
     >
       {/* Efectos de fondo épicos */}
       <div aria-hidden className="absolute inset-0">
@@ -86,13 +86,13 @@ export default function FinalCTA() {
         {/* Card principal con múltiples capas */}
         <div className="relative">
           {/* Glow exterior masivo */}
-          <div className="absolute -inset-10 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-purple-600/20 blur-3xl animate-pulse-slow" />
+          <div className="absolute -inset-4 sm:-inset-6 md:-inset-10 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-purple-600/20 blur-2xl sm:blur-3xl animate-pulse-slow" />
           
           {/* Borde animado con gradiente */}
-          <div className="relative rounded-[3rem] p-[2px] bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 animate-gradient-xy">
+          <div className="relative rounded-2xl sm:rounded-3xl md:rounded-[3rem] p-[1px] sm:p-[2px] bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 animate-gradient-xy">
             
             {/* Card interior con glassmorphism */}
-            <div className="relative rounded-[calc(3rem-2px)] bg-gradient-to-br from-[#0a0a0a] via-[#0d0d0d] to-[#0a0a0a] backdrop-blur-2xl px-8 md:px-16 py-16 md:py-20 overflow-hidden">
+            <div className="relative rounded-2xl sm:rounded-3xl md:rounded-[calc(3rem-2px)] bg-gradient-to-br from-[#0a0a0a] via-[#0d0d0d] to-[#0a0a0a] backdrop-blur-2xl px-4 sm:px-6 md:px-8 lg:px-16 py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
               
               {/* Patrón de fondo interno */}
               <div className="absolute inset-0 opacity-5">
@@ -106,21 +106,22 @@ export default function FinalCTA() {
               {/* Contenido */}
               <div className="relative text-center">
                 {/* Badge superior */}
-                <div className="inline-block mb-8">
+                <div className="inline-block mb-4 sm:mb-6 md:mb-8">
                   <div className="relative group">
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-white/[0.1] to-white/[0.05] backdrop-blur-xl border border-white/20">
-                      <Zap className="h-5 w-5 text-cyan-300 animate-pulse" />
-                      <span className="text-sm font-light tracking-wide text-cyan-300">
-                        Oferta Limitada - Solo 10 cupos este mes
+                    <div className="relative inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full bg-gradient-to-r from-white/[0.1] to-white/[0.05] backdrop-blur-xl border border-white/20">
+                      <Zap className="h-4 w-4 sm:h-5 sm:w-5 text-cyan-300 animate-pulse" />
+                      <span className="text-xs sm:text-sm font-light tracking-wide text-cyan-300">
+                        <span className="hidden sm:inline">Oferta Limitada - Solo 10 cupos este mes</span>
+                        <span className="sm:hidden">Oferta Limitada - 10 cupos</span>
                       </span>
-                      <Zap className="h-5 w-5 text-cyan-300 animate-pulse" />
+                      <Zap className="h-4 w-4 sm:h-5 sm:w-5 text-cyan-300 animate-pulse" />
                     </div>
                   </div>
                 </div>
                 
                 {/* Título épico */}
-                <h2 className="text-5xl md:text-7xl font-thin tracking-tight mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-thin tracking-tight mb-4 sm:mb-6">
                   <span className="block font-light text-white/90">¿Listo para</span>
                   <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 animate-gradient-x font-extralight">
                     multiplicar x10
@@ -128,31 +129,31 @@ export default function FinalCTA() {
                   <span className="block font-light text-white/90">tus resultados?</span>
                 </h2>
                 
-                <p className="text-xl font-light text-blue-200/70 max-w-3xl mx-auto mb-4">
-                  Únete a <span className="text-cyan-300 font-normal">+500 empresas</span> que ya están un paso adelante
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light text-blue-200/70 max-w-3xl mx-auto mb-3 sm:mb-4 px-4 sm:px-0">
+                  Únete a <span className="text-cyan-300 font-normal">+50 empresas</span> que ya están un paso adelante
                 </p>
                 
-                <p className="text-lg font-light text-blue-200/60 max-w-4xl mx-auto mb-12">
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg font-light text-blue-200/60 max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12 px-4 sm:px-0">
                   Transforma tu negocio con agentes de IA que venden, atienden y escalan 24/7.
                   Integración completa con WhatsApp, CRM y todas tus herramientas.
                 </p>
                 
                 {/* Cards de beneficios */}
-                <div className="grid md:grid-cols-3 gap-6 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10 md:mb-12 px-4 sm:px-0">
                   {perks.map(({ icon: Icon, title, desc, gradient }) => (
                     <div 
                       key={title} 
                       className="group relative"
                     >
                       <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500`} />
-                      <div className="relative rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.03] backdrop-blur-xl border border-white/10 p-6 transition-all duration-500 group-hover:translate-y-[-2px]">
-                        <div className="flex flex-col items-center text-center gap-3">
-                          <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${gradient} bg-opacity-20 flex items-center justify-center`}>
-                            <Icon className="h-6 w-6 text-white" />
+                      <div className="relative rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.08] to-white/[0.03] backdrop-blur-xl border border-white/10 p-4 sm:p-6 transition-all duration-500 group-hover:translate-y-[-2px]">
+                        <div className="flex flex-col items-center text-center gap-2 sm:gap-3">
+                          <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br ${gradient} bg-opacity-20 flex items-center justify-center`}>
+                            <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                           </div>
                           <div>
-                            <p className="font-light text-white text-lg">{title}</p>
-                            <p className="text-sm font-light text-blue-200/60 mt-1">{desc}</p>
+                            <p className="font-light text-white text-sm sm:text-base md:text-lg">{title}</p>
+                            <p className="text-xs sm:text-sm font-light text-blue-200/60 mt-1 leading-tight">{desc}</p>
                           </div>
                         </div>
                       </div>
@@ -161,23 +162,23 @@ export default function FinalCTA() {
                 </div>
                 
                 {/* Trust indicators */}
-                <div className="flex flex-wrap justify-center gap-6 mb-12">
+                <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10 md:mb-12">
                   {trust.map(({ icon: Icon, label, value }) => (
                     <div
                       key={label}
-                      className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-gradient-to-r from-white/[0.06] to-white/[0.02] backdrop-blur-sm border border-white/10"
+                      className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 md:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-white/[0.06] to-white/[0.02] backdrop-blur-sm border border-white/10"
                     >
-                      <Icon className="h-5 w-5 text-cyan-300" />
+                      <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-cyan-300" />
                       <div className="text-left">
-                        <p className="text-xs font-light text-blue-200/60">{label}</p>
-                        <p className="text-sm font-light text-white">{value}</p>
+                        <p className="text-xs font-light text-blue-200/60 leading-tight">{label}</p>
+                        <p className="text-xs sm:text-sm font-light text-white">{value}</p>
                       </div>
                     </div>
                   ))}
                 </div>
                 
                 {/* CTAs principales */}
-                <div className="flex flex-col items-center gap-6">
+                <div className="flex flex-col items-center gap-4 sm:gap-6">
                   {/* CTA primario con mega efecto - CONVERTIDO A ENLACE */}
                   <div className="relative group">
                     <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-full blur-lg opacity-70 group-hover:opacity-100 transition-all duration-500 animate-pulse-slow" />
@@ -185,11 +186,11 @@ export default function FinalCTA() {
                       href="https://cal.com/www.cognitiva-ai.agency"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative inline-flex items-center gap-3 px-12 py-6 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-light tracking-wide text-lg shadow-2xl hover:shadow-[0_0_80px_rgba(6,182,212,0.6)] transition-all duration-500 group-hover:scale-105"
+                      className="relative inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 md:px-8 lg:px-12 py-2.5 sm:py-3 md:py-4 lg:py-6 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-light tracking-wide text-xs sm:text-sm md:text-base lg:text-lg shadow-2xl hover:shadow-[0_0_80px_rgba(6,182,212,0.6)] transition-all duration-500 group-hover:scale-105"
                     >
-                      <Sparkles className="h-6 w-6 animate-pulse" />
-                      Comenzar mi transformación ahora
-                      <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" />
+                      <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 animate-pulse" />
+                      <span className="whitespace-nowrap">Comenzar transformación</span>
+                      <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 group-hover:translate-x-2 transition-transform duration-300" />
                     </a>
                   </div>
                   
@@ -198,26 +199,26 @@ export default function FinalCTA() {
                     href="https://cal.com/www.cognitiva-ai.agency"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-2 text-cyan-300 hover:text-white transition-colors duration-300"
+                    className="group flex items-center gap-1.5 sm:gap-2 text-cyan-300 hover:text-white transition-colors duration-300"
                   >
-                    <MessageCircle className="h-5 w-5" />
-                    <span className="font-light">Hablar con un experto en IA</span>
-                    <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    <MessageCircle className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <span className="font-light text-sm sm:text-base">Hablar con experto</span>
+                    <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </a>
                   
                   {/* Garantías */}
-                  <div className="flex items-center gap-6 mt-4 text-xs font-light text-blue-200/50">
+                  <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 mt-3 sm:mt-4 text-xs font-light text-blue-200/50">
                     <span className="flex items-center gap-1">
-                      <ShieldCheck className="h-4 w-4 text-emerald-400" />
-                      Sin tarjeta de crédito
+                      <ShieldCheck className="h-3 w-3 sm:h-4 sm:w-4 text-emerald-400" />
+                      <span className="text-xs">Sin tarjeta</span>
                     </span>
                     <span className="flex items-center gap-1">
-                      <CheckCircle className="h-4 w-4 text-emerald-400" />
-                      Configuración gratuita
+                      <CheckCircle className="h-3 w-3 sm:h-4 sm:w-4 text-emerald-400" />
+                      <span className="text-xs">Setup gratis</span>
                     </span>
                     <span className="flex items-center gap-1">
-                      <Clock className="h-4 w-4 text-emerald-400" />
-                      Resultados en 7 días
+                      <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-emerald-400" />
+                      <span className="text-xs">7 días</span>
                     </span>
                   </div>
                 </div>
@@ -227,11 +228,12 @@ export default function FinalCTA() {
         </div>
         
         {/* Urgencia/Escasez */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/20">
+        <div className="mt-8 sm:mt-10 md:mt-12 text-center">
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/20">
             <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-            <span className="text-sm font-light text-red-300">
-              Solo quedan 3 cupos disponibles para implementación este mes
+            <span className="text-xs sm:text-sm font-light text-red-300">
+              <span className="hidden sm:inline">Solo quedan 3 cupos disponibles para implementación este mes</span>
+              <span className="sm:hidden">Solo 3 cupos disponibles</span>
             </span>
           </div>
         </div>

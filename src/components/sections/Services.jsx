@@ -33,7 +33,7 @@ export default function Services() {
   return (
     <section
       id="servicios"
-      className="relative py-32 overflow-hidden bg-gradient-to-b from-[#0a0a0a] via-[#0d0d0d] to-[#0a0a0a]"
+      className="relative -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20 pt-8 sm:pt-16 md:pt-20 lg:pt-24 xl:pt-28 pb-16 sm:pb-24 md:pb-32 overflow-hidden bg-gradient-to-b from-[#0a0a0a] via-[#0d0d0d] to-[#0a0a0a]"
       aria-label="Soluciones que transforman tu negocio"
     >
       {/* Efectos de fondo mejorados */}
@@ -51,35 +51,43 @@ export default function Services() {
       </div>
 
       <div ref={ref} className="container-padded animate-in relative">
-        {/* Header mejorado */}
-        <header className="text-center mb-20">
-          {/* Badge iluminado */}
-          <div className="inline-block mb-8">
+        {/* Header con espaciado superior aumentado */}
+        <header className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 pt-6 sm:pt-8 md:pt-12 lg:pt-16">
+          {/* Badge ultra-compacto */}
+          <div className="inline-block mb-4 sm:mb-6 md:mb-8">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-gray-900/90 to-gray-800/90 backdrop-blur-xl border border-blue-400/30">
-                <Sparkles className="h-4 w-4 text-cyan-400 animate-pulse" />
-                <span className="text-sm font-light tracking-wide text-cyan-300">Suite Integral de Automatización IA</span>
+              <div className="relative inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-gray-900/90 to-gray-800/90 backdrop-blur-xl border border-blue-400/30">
+                <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-cyan-400 animate-pulse" />
+                <span className="text-xs sm:text-sm font-light tracking-wide text-cyan-300">
+                  <span className="hidden sm:inline">Suite Integral de Automatización IA</span>
+                  <span className="sm:hidden">Automatización IA</span>
+                </span>
               </div>
             </div>
           </div>
 
-          {/* Título con degradado */}
-          <h2 className="text-5xl md:text-7xl font-thin tracking-tight mb-6">
+          {/* Título optimizado para móvil */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-thin tracking-tight mb-4 sm:mb-6 px-2 sm:px-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 animate-gradient-x">
-              Soluciones que transforman
+              <span className="hidden sm:inline">Soluciones que transforman</span>
+              <span className="sm:hidden">Soluciones que</span>
             </span>
             <br />
-            <span className="text-white/90 font-light">tu negocio</span>
+            <span className="text-white/90 font-light">
+              <span className="hidden sm:inline">tu negocio</span>
+              <span className="sm:hidden">transforman</span>
+            </span>
           </h2>
           
-          <p className="text-lg md:text-xl font-light text-blue-200/80 max-w-2xl mx-auto">
-            Tecnología de vanguardia adaptada a tu empresa con el poder de la Inteligencia Artificial
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light text-blue-200/80 max-w-2xl mx-auto px-4 sm:px-2 md:px-4 leading-tight">
+            <span className="hidden sm:inline">Tecnología de vanguardia adaptada a tu empresa con el poder de la Inteligencia Artificial</span>
+            <span className="sm:hidden">Tecnología IA adaptada a tu empresa</span>
           </p>
         </header>
 
-        {/* Grid de servicios responsive - igual que Industrias */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-6 max-w-6xl mx-auto">
+        {/* Grid de servicios ultra-optimizado para móvil */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6 max-w-6xl mx-auto px-2 sm:px-4 md:px-0">
           {SERVICES.map((service, index) => {
             const gradient = serviceGradients[index % serviceGradients.length];
             const isExpanded = openIndex === index;
@@ -99,19 +107,19 @@ export default function Services() {
                 onMouseEnter={() => setHoveredCard(service.title)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                {/* CTA Button */}
+                {/* CTA Button optimizado para móvil */}
                 <a 
                   href="https://cal.com/www.cognitiva-ai.agency"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/btn relative w-full block mt-4"
+                  className="group/btn relative w-full block mt-3 sm:mt-4"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-r ${gradient} rounded-2xl blur-md opacity-50 group-hover/btn:opacity-100 transition-opacity duration-300`} />
-                  <div className="relative flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 transition-all duration-300 group-hover/btn:shadow-[0_0_30px_rgba(59,130,246,0.4)]">
-                    <span className="text-sm font-light text-white">
+                  <div className={`absolute inset-0 bg-gradient-to-r ${gradient} rounded-lg sm:rounded-xl md:rounded-2xl blur-md opacity-50 group-hover/btn:opacity-100 transition-opacity duration-300`} />
+                  <div className="relative flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3.5 rounded-lg sm:rounded-xl md:rounded-2xl bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm border border-white/20 transition-all duration-300 group-hover/btn:shadow-[0_0_30px_rgba(59,130,246,0.4)]">
+                    <span className="text-xs sm:text-sm font-light text-white">
                       {service.cta}
                     </span>
-                    <ArrowRight className="h-4 w-4 text-white/90 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 text-white/90 group-hover/btn:translate-x-1 transition-transform duration-300" />
                   </div>
                 </a>
               </CollapsibleCard>
@@ -119,8 +127,8 @@ export default function Services() {
           })}
         </div>
 
-        {/* Footer de sección con efecto de luz - CONVERTIDO A ENLACE */}
-        <div className="mt-20 text-center">
+        {/* Footer optimizado para móvil */}
+        <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20 text-center px-4 sm:px-0">
           <div className="inline-block">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-full blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-500" />
@@ -128,11 +136,14 @@ export default function Services() {
                 href="https://cal.com/www.cognitiva-ai.agency"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative px-8 py-4 rounded-full bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 transition-all duration-500 group-hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] inline-block"
+                className="relative px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 transition-all duration-500 group-hover:shadow-[0_0_40px_rgba(99,102,241,0.4)] inline-block"
               >
-                <span className="flex items-center gap-3">
-                  <span className="text-base font-light text-white">Descubre todas las posibilidades</span>
-                  <ArrowRight className="h-5 w-5 text-cyan-300 group-hover:translate-x-1 transition-transform duration-300" />
+                <span className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
+                  <span className="text-xs sm:text-sm md:text-base font-light text-white whitespace-nowrap">
+                    <span className="hidden sm:inline">Descubre todas las posibilidades</span>
+                    <span className="sm:hidden">Ver más soluciones</span>
+                  </span>
+                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-cyan-300 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </a>
             </div>

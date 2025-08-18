@@ -187,13 +187,13 @@ export default function Industries() {
             </div>
           </div>
 
-          <h2 className="text-5xl md:text-7xl font-thin tracking-tight text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-thin tracking-tight text-white mb-4">
             <span className="font-light">Potencia tu</span>{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400 animate-gradient-x">
               industria
             </span>
           </h2>
-          <p className="text-lg md:text-xl font-light text-blue-200/70 max-w-3xl mx-auto mb-4">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light text-blue-200/70 max-w-3xl mx-auto mb-4">
             Experiencia específica y tecnología adaptada a los desafíos únicos de tu sector
           </p>
           <p className="text-sm font-light text-cyan-300/60">
@@ -297,9 +297,9 @@ export default function Industries() {
             className="relative group inline-block"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative px-8 py-4 rounded-full bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 transition-all duration-500 group-hover:shadow-[0_0_40px_rgba(59,130,246,0.4)]">
-              <span className="flex items-center gap-2 text-base font-light text-white">
-                <BarChart3 className="h-5 w-5" />
+            <div className="relative px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border border-white/20 transition-all duration-500 group-hover:shadow-[0_0_40px_rgba(59,130,246,0.4)]">
+              <span className="flex items-center gap-2 text-sm sm:text-base font-light text-white">
+                <BarChart3 className="h-4 w-4 sm:h-5 sm:w-5" />
                 Consultar solución personalizada
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </span>

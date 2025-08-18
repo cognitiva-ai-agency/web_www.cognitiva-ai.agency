@@ -11,7 +11,7 @@ export default function Demo() {
       <div ref={ref} className="container-padded animate-in max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-3">Ve Cognitiva en acción</h2>
-          <p className="text-xl text-gray-600">Demo de 90 segundos que cambia la perspectiva</p>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600">Demo de 90 segundos que cambia la perspectiva</p>
         </div>
 
         <div className="bg-gradient-to-br from-[#0a0a0a] via-[#0d0d0d] to-[#0a0a0a] rounded-2xl p-8 shadow-xl">
