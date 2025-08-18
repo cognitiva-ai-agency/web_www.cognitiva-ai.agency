@@ -33,7 +33,7 @@ export default function Services() {
   return (
     <section
       id="servicios"
-      className="relative py-32 overflow-hidden bg-gradient-to-b from-[#000412] via-[#000824] to-[#000412]"
+      className="relative py-32 overflow-hidden bg-gradient-to-b from-[#0a0a0a] via-[#0d0d0d] to-[#0a0a0a]"
       aria-label="Soluciones que transforman tu negocio"
     >
       {/* Efectos de fondo mejorados */}
@@ -57,7 +57,7 @@ export default function Services() {
           <div className="inline-block mb-8">
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-950/90 to-indigo-950/90 backdrop-blur-xl border border-blue-400/30">
+              <div className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-gray-900/90 to-gray-800/90 backdrop-blur-xl border border-blue-400/30">
                 <Sparkles className="h-4 w-4 text-cyan-400 animate-pulse" />
                 <span className="text-sm font-light tracking-wide text-cyan-300">Suite Integral de Automatización IA</span>
               </div>

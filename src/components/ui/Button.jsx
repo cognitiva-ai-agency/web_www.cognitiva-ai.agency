@@ -7,7 +7,7 @@ const variants = {
   secondary: "bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20",
   subtle: "bg-gray-100 text-gray-900 hover:bg-gray-200",
   warning: "bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-600 hover:to-orange-600",
-  dark: "bg-gray-900 text-white hover:bg-gray-800",
+  dark: "bg-[#0a0a0a] text-white hover:bg-[#0d0d0d]",
 };
 
 const sizes = {

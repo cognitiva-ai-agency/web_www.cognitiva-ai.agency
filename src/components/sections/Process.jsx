@@ -19,7 +19,7 @@ export default function Process() {
   return (
     <section
       id="proceso"
-      className="relative py-32 bg-[#000412] overflow-hidden"
+      className="relative py-32 bg-[#0a0a0a] overflow-hidden"
       aria-label="Cómo trabajamos"
     >
       {/* Efectos de fondo */}

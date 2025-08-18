@@ -8,8 +8,8 @@
   --font-geist-mono: 'JetBrains Mono', 'Fira Code', monospace;
   
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 4, 18;
-  --background-end-rgb: 0, 8, 36;
+  --background-start-rgb: 10, 10, 10;
+  --background-end-rgb: 13, 13, 13;
   
   --primary-blue: 59, 130, 246;
   --primary-cyan: 6, 182, 212;
@@ -111,7 +111,7 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 4, 18, 0.8);
+  background: rgba(10, 10, 10, 0.8);
 }
 
 ::-webkit-scrollbar-thumb {

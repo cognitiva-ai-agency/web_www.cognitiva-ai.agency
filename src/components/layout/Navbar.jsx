@@ -134,8 +134,8 @@ export default function Navbar() {
       <nav
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
           scrolled
-            ? "bg-[#000412]/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(59,130,246,0.15)]"
-            : "bg-gradient-to-b from-[#000412]/80 via-[#000824]/60 to-transparent backdrop-blur-xl"
+            ? "bg-[#0a0a0a]/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(59,130,246,0.15)]"
+            : "bg-gradient-to-b from-[#0a0a0a]/80 via-[#0d0d0d]/60 to-transparent backdrop-blur-xl"
         }`}
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

@@ -45,7 +45,7 @@ export default function CaseStudies() {
   return (
     <section
       id="casos"
-      className="relative py-32 bg-[#000412] overflow-hidden"
+      className="relative py-32 bg-[#0a0a0a] overflow-hidden"
       aria-label="Resultados que hablan"
     >
       {/* Efectos de fondo */}

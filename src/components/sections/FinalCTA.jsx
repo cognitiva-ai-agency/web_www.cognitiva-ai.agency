@@ -51,7 +51,7 @@ export default function FinalCTA() {
   return (
     <section 
       id="cta" 
-      className="relative py-32 bg-[#000412] overflow-hidden"
+      className="relative py-32 bg-[#0a0a0a] overflow-hidden"
     >
       {/* Efectos de fondo épicos */}
       <div aria-hidden className="absolute inset-0">
@@ -92,7 +92,7 @@ export default function FinalCTA() {
           <div className="relative rounded-[3rem] p-[2px] bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 animate-gradient-xy">
             
             {/* Card interior con glassmorphism */}
-            <div className="relative rounded-[calc(3rem-2px)] bg-gradient-to-br from-[#000824] via-[#001030] to-[#000824] backdrop-blur-2xl px-8 md:px-16 py-16 md:py-20 overflow-hidden">
+            <div className="relative rounded-[calc(3rem-2px)] bg-gradient-to-br from-[#0a0a0a] via-[#0d0d0d] to-[#0a0a0a] backdrop-blur-2xl px-8 md:px-16 py-16 md:py-20 overflow-hidden">
               
               {/* Patrón de fondo interno */}
               <div className="absolute inset-0 opacity-5">

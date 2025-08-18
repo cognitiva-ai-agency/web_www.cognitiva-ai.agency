@@ -36,7 +36,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative py-32 bg-[#000412] overflow-hidden"
+      className="relative py-32 bg-[#0a0a0a] overflow-hidden"
       aria-labelledby="faq-title"
     >
       {/* Efectos de fondo interactivos */}

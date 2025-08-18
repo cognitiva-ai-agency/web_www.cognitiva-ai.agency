@@ -12,7 +12,7 @@ export default function Integrations() {
   return (
     <section
       id="integraciones"
-      className="relative py-32 bg-[#000412] overflow-hidden"
+      className="relative py-32 bg-[#0a0a0a] overflow-hidden"
       aria-labelledby="integraciones-title"
     >
       {/* Efectos de fondo */}

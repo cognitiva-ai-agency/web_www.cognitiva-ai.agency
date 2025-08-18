@@ -19,7 +19,7 @@ export default function Security() {
   return (
     <section
       id="seguridad"
-      className="relative py-32 bg-[#000412] overflow-hidden"
+      className="relative py-32 bg-[#0a0a0a] overflow-hidden"
       aria-labelledby="security-title"
     >
       {/* Efectos de fondo con tema de seguridad */}

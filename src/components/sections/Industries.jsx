@@ -144,7 +144,7 @@ export default function Industries() {
   return (
     <section
       id="industrias"
-      className="relative py-32 bg-[#000412] overflow-hidden"
+      className="relative py-32 bg-[#0a0a0a] overflow-hidden"
       aria-label="Soluciones por industria"
     >
       {/* Efectos de fondo mejorados */}

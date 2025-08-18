@@ -22,7 +22,7 @@ export default function FeatureCard({
       ].join(" ")}
     >
       {/* Capa interior */}
-      <div className="rounded-3xl h-full w-full bg-gradient-to-br from-[#0d1c3a] via-[#0d1a33] to-[#0a1224] p-6 md:p-7">
+      <div className="rounded-3xl h-full w-full bg-gradient-to-br from-[#0a0a0a] via-[#0d0d0d] to-[#101010] p-6 md:p-7">
         {/* Glow spot al hover */}
         <div
           aria-hidden
@@ -30,7 +30,7 @@ export default function FeatureCard({
         />
         {/* Icono en badge */}
         {Icon && (
-          <div className="h-12 w-12 rounded-2xl bg-blue-900/60 border border-blue-300/20 flex items-center justify-center">
+          <div className="h-12 w-12 rounded-2xl bg-[#0d0d0d]/80 border border-gray-500/20 flex items-center justify-center">
             <Icon className="h-6 w-6 text-blue-200" />
           </div>
         )}
@@ -55,9 +55,9 @@ export default function FeatureCard({
           <div className="mt-6 flex justify-center">
             <Button
               variant="secondary"
-              className="rounded-full border border-blue-400/25 bg-blue-900/60 px-6 py-3 text-sm font-medium
+              className="rounded-full border border-blue-400/25 bg-[#0d0d0d]/80 px-6 py-3 text-sm font-medium
                          transition-all duration-300
-                         hover:bg-blue-800/70
+                         hover:bg-gray-700/70
                          hover:shadow-[0_0_22px_rgba(59,130,246,0.75)]
                          hover:ring-2 hover:ring-blue-400/50"
               onClick={onCtaClick}

@@ -95,7 +95,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#000412] text-white overflow-hidden">
+    <footer className="relative bg-[#0a0a0a] text-white overflow-hidden">
       <style>{`
         @keyframes auroraFooter {
           0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.1; }
@@ -189,7 +189,7 @@ export default function Footer() {
         <div className="container-padded py-20">
           <div className="relative rounded-3xl overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-purple-600/20 gradient-xy" />
-            <div className="relative rounded-3xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/10 p-16 text-center">
+            <div className="relative rounded-3xl bg-gradient-to-br from-[#0a0a0a]/90 to-[#0d0d0d]/90 backdrop-blur-xl border border-white/10 p-16 text-center">
               <div className="inline-block mb-8">
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
@@ -296,7 +296,7 @@ export default function Footer() {
                 <div className="px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-900/30 to-teal-900/30 border border-emerald-500/20 text-xs text-emerald-300">
                   ISO 27001
                 </div>
-                <div className="px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-900/30 to-indigo-900/30 border border-blue-500/20 text-xs text-blue-300">
+                <div className="px-3 py-1.5 rounded-full bg-gradient-to-r from-[#0a0a0a]/60 to-[#0d0d0d]/60 border border-blue-500/20 text-xs text-blue-300">
                   GDPR Ready
                 </div>
                 <div className="px-3 py-1.5 rounded-full bg-gradient-to-r from-purple-900/30 to-pink-900/30 border border-purple-500/20 text-xs text-purple-300">
@@ -490,7 +490,7 @@ export default function Footer() {
                 <div className="w-2 h-2 bg-emerald-400 rounded-full" style={{ animation: 'pulse 1s ease-in-out infinite' }} />
                 <span className="text-xs font-light text-emerald-300">Todos los sistemas operativos</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-900/30 to-cyan-900/30 backdrop-blur-sm border border-blue-500/20">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#0a0a0a]/60 to-[#0d0d0d]/60 backdrop-blur-sm border border-blue-500/20">
                 <Database className="h-3 w-3 text-blue-400" />
                 <span className="text-xs font-light text-blue-300">v2.4.1</span>
               </div>
