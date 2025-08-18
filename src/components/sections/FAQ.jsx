@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 import { useStableRandom } from "../../hooks/useStableRandom";
-import { ChevronDown, HelpCircle, Sparkles, MessageCircle, Plus, Minus } from "lucide-react";
+import { ChevronDown, HelpCircle, Sparkles, MessageCircle, Plus, Minus, Clock, Cpu, Shield, GraduationCap, TrendingUp, LogOut } from "lucide-react";
 import { FAQS } from "../../lib/utils/constants";
 import CollapsibleCard from "../ui/CollapsibleCard";
 
@@ -31,6 +31,15 @@ export default function FAQ() {
     "from-orange-600 to-amber-600",
     "from-indigo-600 to-blue-600",
     "from-rose-600 to-red-600",
+  ];
+
+  const faqIcons = [
+    Clock,        // ¿Tiempo de implementación?
+    Cpu,          // ¿Compatibilidad con mi stack?
+    Shield,       // ¿Qué pasa con mis datos?
+    GraduationCap, // ¿Necesito conocimientos técnicos?
+    TrendingUp,   // ¿ROI esperado?
+    LogOut,       // ¿Puedo cancelar?
   ];
 
   return (
@@ -116,11 +125,12 @@ export default function FAQ() {
             const isExpanded = openIndex === idx;
             const isHovered = hoveredCard === faq.q;
             const gradient = faqGradients[idx % faqGradients.length];
+            const IconComponent = faqIcons[idx] || HelpCircle;
 
             return (
               <CollapsibleCard
                 key={faq.q}
-                icon={HelpCircle}
+                icon={IconComponent}
                 title={faq.q}
                 isOpen={isExpanded}
                 isHovered={isHovered}
