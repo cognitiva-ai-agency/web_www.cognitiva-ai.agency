@@ -1,8 +1,42 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"]
-    }
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"],
+        "@/components/*": ["src/components/*"],
+        "@/sections/*": ["src/components/sections/*"],
+        "@/common/*": ["src/components/common/*"],
+        "@/layout/*": ["src/components/layout/*"],
+        "@/ui/*": ["src/components/ui/*"],
+        "@/hooks/*": ["src/hooks/*"],
+        "@/utils/*": ["src/lib/utils/*"],
+        "@/lib/*": ["src/lib/*"],
+        "@/styles/*": ["src/styles/*"]
+      },
+      "target": "ES2020",
+      "lib": ["ES2020", "DOM", "DOM.Iterable"],
+      "module": "ESNext",
+      "moduleResolution": "bundler",
+      "resolveJsonModule": true,
+      "allowJs": true,
+      "checkJs": false,
+      "jsx": "preserve",
+      "incremental": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "strict": false,
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": true,
+      "isolatedModules": true
+    },
+    "include": [
+      "src/**/*",
+      "next.config.js"
+    ],
+    "exclude": [
+      "node_modules",
+      ".next",
+      "out",
+      "public"
+    ]
   }
-}
