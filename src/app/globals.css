@@ -280,17 +280,39 @@ a {
   }
 }
 
-/* Optimizaciones suaves de performance para móviles */
+/* Optimizaciones avanzadas de performance para móviles */
 @media (max-width: 768px) {
-  /* Optimizar backface-visibility solo para animaciones específicas */
-  .animate-float,
-  .animate-pulse {
+  /* GPU acceleration para elementos críticos */
+  .logo-scroll-container,
+  [class*="animate-"],
+  [class*="transition-"] {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
   
-  /* Usar will-change solo donde es necesario */
+  /* Optimizar will-change para animaciones activas */
   .logo-scroll-container {
     will-change: transform;
+  }
+  
+  
+  /* Optimizaciones de scroll y touch para móviles */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+  }
+  
+  /* Optimizar input y select en móviles */
+  input, select, textarea {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Eliminar delay de click en móviles */
+  a, button, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 }

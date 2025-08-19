@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import ToggleButton from './ToggleButton';
+import { usePerformanceMode } from '../../hooks/usePerformanceMode';
 
 export default function CollapsibleCard({
   // Datos principales
@@ -35,6 +36,7 @@ export default function CollapsibleCard({
 }) {
   const [isMounted, setIsMounted] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const { animationDuration } = usePerformanceMode();
 
   useEffect(() => {
     setIsMounted(true);
@@ -162,7 +164,11 @@ export default function CollapsibleCard({
         
         {/* Contenido desplegable optimizado para móvil */}
         <div
-          className={`transition-all duration-300 sm:duration-500 ease-in-out overflow-hidden ${
+          className={`transition-all ${
+            animationDuration === 'fast' ? 'duration-150' : 
+            animationDuration === 'medium' ? 'duration-300' : 
+            'duration-300 sm:duration-500'
+          } ease-in-out overflow-hidden ${
             shouldShowContent ? 'max-h-[800px] opacity-100 translate-y-0 scale-100' : 'max-h-0 opacity-0 translate-y-[-10px] scale-95'
           }`}
         >

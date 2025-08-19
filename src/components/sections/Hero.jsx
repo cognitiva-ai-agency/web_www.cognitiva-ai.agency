@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import SocialProof from '@/components/common/SocialProof';
 import { BRAND } from '@/lib/utils/constants';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
+import { usePerformanceMode } from '@/hooks/usePerformanceMode';
 
 const logos = [
   {src: '/WalmartChile.png', alt: 'Walmart Chile'},
@@ -21,9 +22,10 @@ const logos = [
 export default function Hero() {
   const { ref } = useScrollAnimation();
   const [isClient, setIsClient] = useState(false);
+  const { shouldReduceEffects, maxParticles } = usePerformanceMode();
   
   // Elementos flotantes estáticos para evitar problemas de hidratación
-  const floatingElements = [
+  const allFloatingElements = [
     { left: 10, delay: 0, duration: 15 },
     { left: 25, delay: 2, duration: 18 },
     { left: 45, delay: 4, duration: 12 },
@@ -31,6 +33,8 @@ export default function Hero() {
     { left: 80, delay: 3, duration: 16 },
     { left: 90, delay: 5, duration: 14 }
   ];
+  
+  const floatingElements = allFloatingElements.slice(0, Math.min(maxParticles, 6));
 
   useEffect(() => {
     setIsClient(true);
@@ -43,6 +47,7 @@ export default function Hero() {
       aria-label="Multiplica tus ventas con Agentes de IA que trabajan 24/7">
       
       <div aria-hidden className="absolute inset-0 -z-10">
+        {/* Efectos de fondo siempre visibles - blur reducido en móvil para performance */}
         <div className="absolute top-0 left-0 w-[1000px] h-[1000px] bg-gradient-to-br from-blue-600/20 to-transparent blur-[30px] sm:blur-[150px] rounded-full animate-pulse-slow" />
         <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-cyan-500/15 to-transparent blur-[20px] sm:blur-[120px] rounded-full animate-pulse-slow animation-delay-2000" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gradient-radial from-indigo-600/10 to-transparent blur-[20px] sm:blur-[100px] animate-rotate-slow" />

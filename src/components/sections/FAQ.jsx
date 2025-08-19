@@ -2,6 +2,7 @@
 import React, { useState, useCallback, useMemo } from "react";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 import { useStableRandom } from "../../hooks/useStableRandom";
+import { usePerformanceMode } from "../../hooks/usePerformanceMode";
 import { ChevronDown, HelpCircle, Sparkles, MessageCircle, Plus, Minus, Clock, Cpu, Shield, GraduationCap, TrendingUp, LogOut } from "lucide-react";
 import { FAQS } from "../../lib/utils/constants";
 import CollapsibleCard from "../ui/CollapsibleCard";
@@ -10,8 +11,10 @@ export default function FAQ() {
   const { ref } = useScrollAnimation();
   const [openIndex, setOpenIndex] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
-  const bubbleElements = useStableRandom(15, 4);
-  const questionElements = useStableRandom(10, 5);
+  const { shouldReduceEffects, maxParticles, animationDuration } = usePerformanceMode();
+  
+  const bubbleElements = useStableRandom(maxParticles, 4);
+  const questionElements = useStableRandom(shouldReduceEffects ? 5 : 10, 5);
 
   const toggleCard = useCallback((index) => {
     const newOpenIndex = openIndex === index ? null : index;
@@ -53,16 +56,16 @@ export default function FAQ() {
     >
       {/* Efectos de fondo interactivos */}
       <div aria-hidden className="absolute inset-0">
-        {/* Gradientes animados - simplificados en móvil */}
+        {/* Gradientes animados - siempre visibles, blur reducido en móvil para performance */}
         <div className="absolute top-1/3 left-0 w-[1000px] h-[1000px] bg-gradient-to-br from-indigo-600/10 to-transparent blur-[50px] sm:blur-[150px] rounded-full animate-float-slow" />
         <div className="absolute bottom-1/3 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-purple-600/10 to-transparent blur-[30px] sm:blur-[120px] rounded-full animate-float-slow animation-delay-4000" />
         
-        {/* Burbujas flotantes interactivas - reducidas en móvil */}
+        {/* Burbujas flotantes interactivas - adaptativos según performance */}
         <div className="absolute inset-0">
-          {bubbleElements.slice(0, 15).map((element, i) => (
+          {bubbleElements.map((element, i) => (
             <div
               key={i}
-              className={`absolute w-2 h-2 bg-gradient-to-r from-indigo-400/30 to-purple-400/30 rounded-full animate-bubble-float ${i >= 5 ? 'hidden sm:block' : ''}`}
+              className="absolute w-2 h-2 bg-gradient-to-r from-indigo-400/30 to-purple-400/30 rounded-full animate-bubble-float"
               style={{
                 left: `${element.left}%`,
                 bottom: `-10%`,
