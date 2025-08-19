@@ -1,7 +1,8 @@
 import {
   Bot, Zap, Database, Target, Globe, BarChart3, Award, Shield, Star,
   Phone, Clock, TrendingUp, PieChart, DollarSign, Lock, Cloud, Cpu,
-  ShoppingCart, Rocket, Calendar, CheckCircle
+  ShoppingCart, Rocket, Calendar, CheckCircle, GraduationCap, Heart,
+  Home, UtensilsCrossed, Scale
 } from "lucide-react";
 
 /* ----------------------------- Marca & navegación ---------------------------- */
@@ -144,6 +145,7 @@ export const CASE_STUDIES = Object.freeze([
   {
     tag: "E-commerce",
     company: "TiendaOnline Pro",
+    icon: ShoppingCart,
     problem:
       "67% de carritos abandonados que representaban miles de dólares en pérdidas mensuales.",
     solution:
@@ -157,6 +159,7 @@ export const CASE_STUDIES = Object.freeze([
   {
     tag: "Educación",
     company: "Universidad Digital",
+    icon: GraduationCap,
     problem:
       "85% de estudiantes con dudas sin resolver fuera del horario de tutorías, afectando la retención estudiantil.",
     solution:
@@ -170,6 +173,7 @@ export const CASE_STUDIES = Object.freeze([
   {
     tag: "Salud",
     company: "Clínica Moderna",
+    icon: Heart,
     problem:
       "35% de citas perdidas por olvidos y proceso de agendamiento que tomaba 15 minutos por paciente.",
     solution:
@@ -183,6 +187,7 @@ export const CASE_STUDIES = Object.freeze([
   {
     tag: "Real Estate",
     company: "Inmobiliaria Prime",
+    icon: Home,
     problem:
       "Agentes perdían 70% del tiempo calificando leads no cualificados y mostrando propiedades inadecuadas.",
     solution:
@@ -196,6 +201,7 @@ export const CASE_STUDIES = Object.freeze([
   {
     tag: "Gastronomía",
     company: "Restaurante Gourmet",
+    icon: UtensilsCrossed,
     problem:
       "60% de llamadas perdidas en hora pico y errores constantes en pedidos telefónicos afectando la reputación.",
     solution:
@@ -209,6 +215,7 @@ export const CASE_STUDIES = Object.freeze([
   {
     tag: "Legal",
     company: "Firma Legal Asociados",
+    icon: Scale,
     problem:
       "Abogados invertían 40% del tiempo en tareas administrativas y documentación repetitiva.",
     solution:

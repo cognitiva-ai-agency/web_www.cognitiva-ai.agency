@@ -11,7 +11,6 @@ import {
   ArrowRight,
   Quote,
   Sparkles,
-  Building2,
   ChevronDown
 } from "lucide-react";
 import CollapsibleCard from "../ui/CollapsibleCard";
@@ -119,7 +118,7 @@ export default function CaseStudies() {
             return (
               <CollapsibleCard
                 key={cs.company}
-                icon={Building2}
+                icon={cs.icon}
                 title={cs.company}
                 subtitle={cs.tag}
                 isOpen={isExpanded}
