@@ -75,10 +75,10 @@ export default function Hero() {
           {isClient && bubbleElements.map((element, i) => (
             <div
               key={`bubble-${i}`}
-              className={`absolute w-1 h-1 bg-gradient-to-r from-cyan-400/50 to-blue-400/50 rounded-full animate-rise-up ${i >= 10 ? 'hidden sm:block' : ''}`}
+              className={`absolute w-1 h-1 bg-gradient-to-r from-cyan-400/50 to-blue-400/50 rounded-full rise-up z-10 ${i >= 10 ? 'hidden sm:block' : ''}`}
               style={{
                 left: `${element.left}%`,
-                bottom: '-10px',
+                top: '100%',
                 animationDelay: `${element.delay}s`,
                 animationDuration: `${element.duration}s`
               }}
@@ -350,16 +350,16 @@ export default function Hero() {
       </div>
 
       {/* Estilos para animaciones */}
-      <style jsx>{`
-        @keyframes rise-up {
+      <style>{`
+        @keyframes riseUp {
           0% { transform: translateY(0) translateX(0); opacity: 0; }
           10% { opacity: 0.6; }
           90% { opacity: 0.6; }
           100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
         }
         
-        .animate-rise-up {
-          animation: rise-up linear infinite;
+        .rise-up {
+          animation: riseUp linear infinite;
         }
       `}</style>
     </section>
