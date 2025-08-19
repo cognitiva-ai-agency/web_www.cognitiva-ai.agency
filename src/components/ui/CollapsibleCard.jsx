@@ -54,6 +54,7 @@ export default function CollapsibleCard({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+
   const handleMouseEnter = () => {
     // Solo activar hover en dispositivos no móviles
     if (!isMobile && onMouseEnter) onMouseEnter();
@@ -169,8 +170,11 @@ export default function CollapsibleCard({
             animationDuration === 'medium' ? 'duration-300' : 
             'duration-300 sm:duration-500'
           } ease-in-out overflow-hidden ${
-            shouldShowContent ? 'max-h-[800px] opacity-100 translate-y-0 scale-100' : 'max-h-0 opacity-0 translate-y-[-10px] scale-95'
+            shouldShowContent ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-[-10px] scale-95'
           }`}
+          style={{
+            maxHeight: shouldShowContent ? '3000px' : '0px'
+          }}
         >
           <div className="px-3 sm:px-4 md:px-6 lg:px-8 py-3 sm:py-4 md:py-6 lg:py-8">
             {/* Separador */}
