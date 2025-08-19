@@ -106,7 +106,7 @@ export default function CollapsibleCard({
         {/* Header clickeable optimizado para móvil */}
         <button
           onClick={handleClick}
-          className="w-full focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-transparent cursor-pointer text-left p-3 sm:p-4 md:p-6"
+          className="w-full focus:outline-none cursor-pointer text-left p-3 sm:p-4 md:p-6"
           aria-expanded={shouldShowContent}
         >
           <div className="flex items-start sm:items-center gap-2 sm:gap-3 md:gap-4 justify-between w-full">
