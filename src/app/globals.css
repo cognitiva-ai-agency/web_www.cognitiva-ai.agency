@@ -279,3 +279,18 @@ a {
     scroll-behavior: auto !important;
   }
 }
+
+/* Optimizaciones suaves de performance para móviles */
+@media (max-width: 768px) {
+  /* Optimizar backface-visibility solo para animaciones específicas */
+  .animate-float,
+  .animate-pulse {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* Usar will-change solo donde es necesario */
+  .logo-scroll-container {
+    will-change: transform;
+  }
+}

@@ -43,9 +43,9 @@ export default function Hero() {
       aria-label="Multiplica tus ventas con Agentes de IA que trabajan 24/7">
       
       <div aria-hidden className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-[1000px] h-[1000px] bg-gradient-to-br from-blue-600/20 to-transparent blur-[150px] rounded-full animate-pulse-slow" />
-        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-cyan-500/15 to-transparent blur-[120px] rounded-full animate-pulse-slow animation-delay-2000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gradient-radial from-indigo-600/10 to-transparent blur-[100px] animate-rotate-slow" />
+        <div className="absolute top-0 left-0 w-[1000px] h-[1000px] bg-gradient-to-br from-blue-600/20 to-transparent blur-[30px] sm:blur-[150px] rounded-full animate-pulse-slow" />
+        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-cyan-500/15 to-transparent blur-[20px] sm:blur-[120px] rounded-full animate-pulse-slow animation-delay-2000" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gradient-radial from-indigo-600/10 to-transparent blur-[20px] sm:blur-[100px] animate-rotate-slow" />
         
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
         
@@ -53,7 +53,7 @@ export default function Hero() {
           {isClient && floatingElements.map((element, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-float"
+              className={`absolute w-1 h-1 bg-blue-400/30 rounded-full animate-float ${i >= 8 ? 'hidden sm:block' : ''}`}
               style={{
                 left: `${element.left}%`,
                 animationDelay: `${element.delay}s`,

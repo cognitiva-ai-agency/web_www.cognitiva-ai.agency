@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 import { useStableRandom } from "../../hooks/useStableRandom";
 import { ChevronDown, HelpCircle, Sparkles, MessageCircle, Plus, Minus, Clock, Cpu, Shield, GraduationCap, TrendingUp, LogOut } from "lucide-react";
@@ -13,37 +13,37 @@ export default function FAQ() {
   const bubbleElements = useStableRandom(15, 4);
   const questionElements = useStableRandom(10, 5);
 
-  const toggleCard = (index) => {
+  const toggleCard = useCallback((index) => {
     const newOpenIndex = openIndex === index ? null : index;
     setOpenIndex(newOpenIndex);
     // Siempre limpiar el hover state al hacer click (especialmente importante en móviles)
     setHoveredCard(null);
-  };
+  }, [openIndex]);
 
-  const onKeyToggle = (e, idx) => {
+  const onKeyToggle = useCallback((e, idx) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       toggleCard(idx);
     }
-  };
+  }, [toggleCard]);
 
-  const faqGradients = [
+  const faqGradients = useMemo(() => [
     "from-blue-600 to-cyan-600",
     "from-purple-600 to-pink-600",
     "from-emerald-600 to-teal-600",
     "from-orange-600 to-amber-600",
     "from-indigo-600 to-blue-600",
     "from-rose-600 to-red-600",
-  ];
+  ], []);
 
-  const faqIcons = [
+  const faqIcons = useMemo(() => [
     Clock,        // ¿Tiempo de implementación?
     Cpu,          // ¿Compatibilidad con mi stack?
     Shield,       // ¿Qué pasa con mis datos?
     GraduationCap, // ¿Necesito conocimientos técnicos?
     TrendingUp,   // ¿ROI esperado?
     LogOut,       // ¿Puedo cancelar?
-  ];
+  ], []);
 
   return (
     <section
@@ -53,16 +53,16 @@ export default function FAQ() {
     >
       {/* Efectos de fondo interactivos */}
       <div aria-hidden className="absolute inset-0">
-        {/* Gradientes animados */}
-        <div className="absolute top-1/3 left-0 w-[1000px] h-[1000px] bg-gradient-to-br from-indigo-600/10 to-transparent blur-[150px] rounded-full animate-float-slow" />
-        <div className="absolute bottom-1/3 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-purple-600/10 to-transparent blur-[120px] rounded-full animate-float-slow animation-delay-4000" />
+        {/* Gradientes animados - simplificados en móvil */}
+        <div className="absolute top-1/3 left-0 w-[1000px] h-[1000px] bg-gradient-to-br from-indigo-600/10 to-transparent blur-[50px] sm:blur-[150px] rounded-full animate-float-slow" />
+        <div className="absolute bottom-1/3 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-purple-600/10 to-transparent blur-[30px] sm:blur-[120px] rounded-full animate-float-slow animation-delay-4000" />
         
-        {/* Burbujas flotantes interactivas */}
+        {/* Burbujas flotantes interactivas - reducidas en móvil */}
         <div className="absolute inset-0">
           {bubbleElements.slice(0, 15).map((element, i) => (
             <div
               key={i}
-              className="absolute w-2 h-2 bg-gradient-to-r from-indigo-400/30 to-purple-400/30 rounded-full animate-bubble-float"
+              className={`absolute w-2 h-2 bg-gradient-to-r from-indigo-400/30 to-purple-400/30 rounded-full animate-bubble-float ${i >= 5 ? 'hidden sm:block' : ''}`}
               style={{
                 left: `${element.left}%`,
                 bottom: `-10%`,
@@ -256,6 +256,13 @@ export default function FAQ() {
         
         .animate-float-question {
           animation: float-question 15s ease-in-out infinite;
+        }
+        
+        /* Optimizaciones móviles - animaciones más simples */
+        @media (max-width: 768px) {
+          .animate-bubble-float {
+            animation-duration: 10s; /* Ligeramente más rápido en móvil */
+          }
         }
         
         .animation-delay-4000 {
