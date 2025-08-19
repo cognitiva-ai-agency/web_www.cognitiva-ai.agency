@@ -16,10 +16,8 @@ export default function FAQ() {
   const toggleCard = (index) => {
     const newOpenIndex = openIndex === index ? null : index;
     setOpenIndex(newOpenIndex);
-    // Limpiar el hover state cuando se contrae una tarjeta
-    if (newOpenIndex === null) {
-      setHoveredCard(null);
-    }
+    // Siempre limpiar el hover state al hacer click (especialmente importante en móviles)
+    setHoveredCard(null);
   };
 
   const onKeyToggle = (e, idx) => {
