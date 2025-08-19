@@ -50,7 +50,7 @@ export default function Hero() {
       className="relative min-h-[80vh] sm:min-h-[85vh] md:min-h-screen pt-16 sm:pt-20 md:pt-24 pb-2 sm:pb-4 md:pb-6 lg:pb-8 bg-[#0a0a0a] text-white overflow-hidden"
       aria-label="Multiplica tus ventas con Agentes de IA que trabajan 24/7">
       
-      <div aria-hidden className="absolute inset-0 -z-10">
+      <div aria-hidden className="absolute inset-0">
         {/* Efectos de fondo siempre visibles - blur reducido en móvil para performance */}
         <div className="absolute top-0 left-0 w-[1000px] h-[1000px] bg-gradient-to-br from-blue-600/20 to-transparent blur-[30px] sm:blur-[150px] rounded-full animate-pulse-slow" />
         <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-cyan-500/15 to-transparent blur-[20px] sm:blur-[120px] rounded-full animate-pulse-slow animation-delay-2000" />
@@ -78,7 +78,7 @@ export default function Hero() {
               className={`absolute w-1 h-1 bg-gradient-to-r from-cyan-400/50 to-blue-400/50 rounded-full rise-up z-10 ${i >= 10 ? 'hidden sm:block' : ''}`}
               style={{
                 left: `${element.left}%`,
-                top: '100%',
+                top: '-10px',
                 animationDelay: `${element.delay}s`,
                 animationDuration: `${element.duration}s`
               }}
@@ -351,15 +351,15 @@ export default function Hero() {
 
       {/* Estilos para animaciones */}
       <style>{`
-        @keyframes riseUp {
+        @keyframes fallDown {
           0% { transform: translateY(0) translateX(0); opacity: 0; }
           10% { opacity: 0.6; }
           90% { opacity: 0.6; }
-          100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+          100% { transform: translateY(100vh) translateX(20px); opacity: 0; }
         }
         
         .rise-up {
-          animation: riseUp linear infinite;
+          animation: fallDown linear infinite;
         }
       `}</style>
     </section>
