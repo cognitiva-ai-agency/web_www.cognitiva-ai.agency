@@ -21,6 +21,41 @@ export default function CaseStudies() {
   const [openIndex, setOpenIndex] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
 
+  // Función para asignar colores a las tecnologías
+  const getTechColor = (tech) => {
+    const techColors = {
+      // APIs y Servicios
+      'WhatsApp API': 'from-green-500/20 to-emerald-500/20 border-green-500/30 text-green-300',
+      'WhatsApp Business': 'from-green-500/20 to-emerald-500/20 border-green-500/30 text-green-300',
+      'Twilio': 'from-red-500/20 to-pink-500/20 border-red-500/30 text-red-300',
+      'MLS API': 'from-orange-500/20 to-amber-500/20 border-orange-500/30 text-orange-300',
+      
+      // E-commerce y Pagos
+      'Shopify': 'from-emerald-500/20 to-green-500/20 border-emerald-500/30 text-emerald-300',
+      'Square': 'from-blue-500/20 to-indigo-500/20 border-blue-500/30 text-blue-300',
+      
+      // IA y Machine Learning
+      'IA': 'from-purple-500/20 to-violet-500/20 border-purple-500/30 text-purple-300',
+      'OpenAI': 'from-purple-500/20 to-violet-500/20 border-purple-500/30 text-purple-300',
+      'ChatGPT': 'from-purple-500/20 to-violet-500/20 border-purple-500/30 text-purple-300',
+      'GPT-4': 'from-purple-500/20 to-violet-500/20 border-purple-500/30 text-purple-300',
+      
+      // Bases de datos
+      'MongoDB': 'from-green-600/20 to-teal-600/20 border-green-600/30 text-green-300',
+      
+      // LMS y Educación
+      'Canvas LMS': 'from-blue-600/20 to-cyan-600/20 border-blue-600/30 text-blue-300',
+      
+      // CRM y Business
+      'CRM': 'from-cyan-500/20 to-blue-500/20 border-cyan-500/30 text-cyan-300',
+      'Google Calendar': 'from-yellow-500/20 to-orange-500/20 border-yellow-500/30 text-yellow-300',
+      'DocuSign': 'from-yellow-600/20 to-amber-600/20 border-yellow-600/30 text-yellow-300',
+      'Notion': 'from-gray-500/20 to-slate-500/20 border-gray-500/30 text-gray-300',
+    };
+
+    return techColors[tech] || 'from-white/15 to-white/8 border-white/15 text-cyan-300';
+  };
+
   const toggleCard = (index) => {
     setOpenIndex(openIndex === index ? null : index); // Abrir/cerrar la seleccionada
   };
@@ -134,7 +169,7 @@ export default function CaseStudies() {
                   {cs.stack.split(' + ').map((tech, i) => (
                     <span 
                       key={i}
-                      className="px-4 py-2 rounded-xl bg-gradient-to-r from-white/15 to-white/8 border border-white/15 text-xs font-light text-cyan-300"
+                      className={`px-4 py-2 rounded-xl bg-gradient-to-r ${getTechColor(tech)} text-xs font-light transition-all duration-300 hover:scale-105 hover:shadow-lg`}
                     >
                       {tech}
                     </span>
