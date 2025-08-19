@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/Button';
 import SocialProof from '@/components/common/SocialProof';
 import { BRAND } from '@/lib/utils/constants';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
-import { useStableRandom } from '@/hooks/useStableRandom';
 import { usePerformanceMode } from '@/hooks/usePerformanceMode';
 
 const logos = [
@@ -23,7 +22,7 @@ const logos = [
 export default function Hero() {
   const { ref } = useScrollAnimation();
   const [isClient, setIsClient] = useState(false);
-  const { shouldReduceEffects, maxParticles } = usePerformanceMode();
+  const { maxParticles } = usePerformanceMode();
   
   // Elementos flotantes estáticos para evitar problemas de hidratación
   const allFloatingElements = [
@@ -36,9 +35,6 @@ export default function Hero() {
   ];
   
   const floatingElements = allFloatingElements.slice(0, Math.min(maxParticles, 6));
-  
-  // Burbujas que suben (efecto del footer agregado al hero)
-  const bubbleElements = useStableRandom(shouldReduceEffects ? 8 : 20, 10);
 
   useEffect(() => {
     setIsClient(true);
@@ -47,45 +43,8 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[80vh] sm:min-h-[85vh] md:min-h-screen pt-16 sm:pt-20 md:pt-24 pb-2 sm:pb-4 md:pb-6 lg:pb-8 bg-[#0a0a0a] text-white overflow-hidden"
+      className="relative min-h-[80vh] sm:min-h-[85vh] md:min-h-screen pt-16 sm:pt-20 md:pt-24 pb-2 sm:pb-4 md:pb-6 lg:pb-8 bg-[#0a0a0a] text-white"
       aria-label="Multiplica tus ventas con Agentes de IA que trabajan 24/7">
-      
-      <div aria-hidden className="absolute inset-0">
-        {/* Efectos de fondo siempre visibles - blur reducido en móvil para performance */}
-        <div className="absolute top-0 left-0 w-[1000px] h-[1000px] bg-gradient-to-br from-blue-600/20 to-transparent blur-[30px] sm:blur-[150px] rounded-full animate-pulse-slow" />
-        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-cyan-500/15 to-transparent blur-[20px] sm:blur-[120px] rounded-full animate-pulse-slow animation-delay-2000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gradient-radial from-indigo-600/10 to-transparent blur-[20px] sm:blur-[100px] animate-rotate-slow" />
-        
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
-        
-        <div className="absolute inset-0 overflow-hidden">
-          {isClient && floatingElements.map((element, i) => (
-            <div
-              key={i}
-              className={`absolute w-1 h-1 bg-blue-400/30 rounded-full animate-float ${i >= 8 ? 'hidden sm:block' : ''}`}
-              style={{
-                left: `${element.left}%`,
-                animationDelay: `${element.delay}s`,
-                animationDuration: `${element.duration}s`
-              }}
-            />
-          ))}
-          
-          {/* Burbujas que suben - efecto del footer */}
-          {isClient && bubbleElements.map((element, i) => (
-            <div
-              key={`bubble-${i}`}
-              className={`absolute w-1 h-1 bg-gradient-to-r from-cyan-400/50 to-blue-400/50 rounded-full rise-up z-10 ${i >= 10 ? 'hidden sm:block' : ''}`}
-              style={{
-                left: `${element.left}%`,
-                top: '-10px',
-                animationDelay: `${element.delay}s`,
-                animationDuration: `${element.duration}s`
-              }}
-            />
-          ))}
-        </div>
-      </div>
 
       <div ref={ref} className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 animate-in">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center py-4 sm:py-6 md:py-8 lg:py-12">
@@ -349,19 +308,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Estilos para animaciones */}
-      <style>{`
-        @keyframes fallDown {
-          0% { transform: translateY(0) translateX(0); opacity: 0; }
-          10% { opacity: 0.6; }
-          90% { opacity: 0.6; }
-          100% { transform: translateY(100vh) translateX(20px); opacity: 0; }
-        }
-        
-        .rise-up {
-          animation: fallDown linear infinite;
-        }
-      `}</style>
     </section>
   );
 }
