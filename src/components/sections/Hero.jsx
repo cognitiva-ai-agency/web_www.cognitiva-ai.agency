@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import SocialProof from '@/components/common/SocialProof';
 import { BRAND } from '@/lib/utils/constants';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
+import { useStableRandom } from '@/hooks/useStableRandom';
 import { usePerformanceMode } from '@/hooks/usePerformanceMode';
 
 const logos = [
@@ -35,6 +36,9 @@ export default function Hero() {
   ];
   
   const floatingElements = allFloatingElements.slice(0, Math.min(maxParticles, 6));
+  
+  // Burbujas que suben (efecto del footer agregado al hero)
+  const bubbleElements = useStableRandom(shouldReduceEffects ? 8 : 20, 10);
 
   useEffect(() => {
     setIsClient(true);
@@ -61,6 +65,20 @@ export default function Hero() {
               className={`absolute w-1 h-1 bg-blue-400/30 rounded-full animate-float ${i >= 8 ? 'hidden sm:block' : ''}`}
               style={{
                 left: `${element.left}%`,
+                animationDelay: `${element.delay}s`,
+                animationDuration: `${element.duration}s`
+              }}
+            />
+          ))}
+          
+          {/* Burbujas que suben - efecto del footer */}
+          {isClient && bubbleElements.map((element, i) => (
+            <div
+              key={`bubble-${i}`}
+              className={`absolute w-1 h-1 bg-gradient-to-r from-cyan-400/50 to-blue-400/50 rounded-full animate-rise-up ${i >= 10 ? 'hidden sm:block' : ''}`}
+              style={{
+                left: `${element.left}%`,
+                bottom: '-10px',
                 animationDelay: `${element.delay}s`,
                 animationDuration: `${element.duration}s`
               }}
@@ -330,6 +348,20 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Estilos para animaciones */}
+      <style jsx>{`
+        @keyframes rise-up {
+          0% { transform: translateY(0) translateX(0); opacity: 0; }
+          10% { opacity: 0.6; }
+          90% { opacity: 0.6; }
+          100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+        }
+        
+        .animate-rise-up {
+          animation: rise-up linear infinite;
+        }
+      `}</style>
     </section>
   );
 }
