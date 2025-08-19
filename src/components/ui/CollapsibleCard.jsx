@@ -95,10 +95,10 @@ export default function CollapsibleCard({
       onMouseLeave={handleMouseLeave}
     >
       {/* Glow de fondo - solo para la tarjeta, no el contenido expandido */}
-      <div className={`absolute top-0 left-0 right-0 h-24 rounded-t-3xl bg-gradient-to-r ${gradient} opacity-0 ${isHovered ? 'opacity-20' : ''} blur-2xl transition-all duration-300`} />
+      <div className={`absolute top-0 left-0 right-0 h-24 rounded-t-3xl bg-gradient-to-r ${gradient} opacity-0 ${isHovered && !shouldShowContent ? 'opacity-20' : ''} blur-2xl transition-all duration-300`} />
       
       {/* Borde con gradiente - solo para la tarjeta, no el contenido expandido */}
-      <div className={`absolute top-0 left-0 right-0 h-24 rounded-t-3xl bg-gradient-to-r ${gradient} opacity-0 ${isHovered ? 'opacity-30' : ''} blur-[1.5px] transition-all duration-300`} />
+      <div className={`absolute top-0 left-0 right-0 h-24 rounded-t-3xl bg-gradient-to-r ${gradient} opacity-0 ${isHovered && !shouldShowContent ? 'opacity-30' : ''} blur-[1.5px] transition-all duration-300`} />
       
       {/* Card principal optimizada para móvil */}
       <div className={`relative rounded-2xl sm:rounded-3xl bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/10 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] overflow-visible`}>

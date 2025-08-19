@@ -14,7 +14,12 @@ export default function FAQ() {
   const questionElements = useStableRandom(10, 5);
 
   const toggleCard = (index) => {
-    setOpenIndex(openIndex === index ? null : index); // Abrir/cerrar la seleccionada
+    const newOpenIndex = openIndex === index ? null : index;
+    setOpenIndex(newOpenIndex);
+    // Limpiar el hover state cuando se contrae una tarjeta
+    if (newOpenIndex === null) {
+      setHoveredCard(null);
+    }
   };
 
   const onKeyToggle = (e, idx) => {
