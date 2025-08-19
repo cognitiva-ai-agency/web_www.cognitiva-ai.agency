@@ -36,12 +36,38 @@ module.exports = {
             900: '#164e63',
             950: '#083344',
           },
+          // Sistema unificado de fondos oscuros
           dark: {
-            DEFAULT: '#0a0a0a',
-            100: '#0d0d0d',
-            200: '#101010',
-            300: '#131313',
-            400: '#161616',
+            DEFAULT: '#0a0a0a',     // Fondo principal más oscuro
+            100: '#0d0d0d',         // Fondo ligeramente más claro
+            200: '#101010',         // Fondo de cards/sections
+            300: '#131313',         // Fondo hover
+            400: '#161616',         // Fondo activo
+            primary: '#0a0a0a',     // Unificado con DEFAULT
+            secondary: '#0F172A',   // Azul muy oscuro para navbars
+            tertiary: '#0a0a0a',    // Igual que primary para coherencia
+            surface: '#1F2937',     // Superficie elevada
+            border: '#374151',      // Bordes
+          },
+          success: {
+            400: '#4ade80',
+            500: '#22c55e',
+            600: '#16a34a',
+          },
+          error: {
+            400: '#f87171',
+            500: '#ef4444', 
+            600: '#dc2626',
+          },
+          warning: {
+            400: '#facc15',
+            500: '#eab308',
+            600: '#ca8a04',
+          },
+          whatsapp: {
+            400: '#25D366',
+            500: '#128C7E',
+            600: '#075E54',
           },
         },
         fontFamily: {

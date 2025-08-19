@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Importar sistema de diseño centralizado */
+@import '../styles/globalDesignSystem.css';
+
 /* Variables CSS personalizadas */
 :root {
   --font-geist-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -28,6 +31,10 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: rgb(10, 10, 10);
 }
 
 body {
@@ -41,6 +48,9 @@ body {
   font-family: var(--font-geist-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 a {
@@ -297,7 +307,6 @@ a {
     will-change: transform;
   }
   
-  
   /* Optimizaciones de scroll y touch para móviles */
   body {
     -webkit-overflow-scrolling: touch;
@@ -314,5 +323,31 @@ a {
   a, button, [role="button"] {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+  }
+}
+
+/* Estilos específicos para optimización móvil */
+@media (max-width: 640px) {
+  /* Hero section mobile adjustments */
+  #hero {
+    padding-top: 1.5rem;
+    min-height: 70vh;
+  }
+  
+  /* Reduce spacing between badge and title specifically on mobile */
+  #hero .space-y-3 > * + * {
+    margin-top: 0.75rem;
+  }
+  
+  /* Optimize container padding for mobile */
+  .container-padded {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Reduce excessive spacing above IA badge on mobile */
+  #hero .col-span-12 {
+    margin-top: 0;
+    padding-top: 0;
   }
 }

@@ -1,20 +1,20 @@
 "use client";
 import React, { useState, useCallback, useMemo } from "react";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
-import { useStableRandom } from "../../hooks/useStableRandom";
-import { usePerformanceMode } from "../../hooks/usePerformanceMode";
+import useScrollBasedAnimation from "../../hooks/useScrollBasedAnimation";
+import { useConsistentRandomValues } from "../../hooks/useConsistentRandomValues";
+import { useDevicePerformance } from "../../hooks/useDevicePerformance";
 import { ChevronDown, HelpCircle, Sparkles, MessageCircle, Plus, Minus, Clock, Cpu, Shield, GraduationCap, TrendingUp, LogOut } from "lucide-react";
-import { FAQS } from "../../lib/utils/constants";
-import CollapsibleCard from "../ui/CollapsibleCard";
+import { FAQS } from "../../lib/utils/businessConstants";
+import ExpandableCard from "../ui/ExpandableCard";
 
 export default function FAQ() {
-  const { ref } = useScrollAnimation();
+  const { ref } = useScrollBasedAnimation();
   const [openIndex, setOpenIndex] = useState(null);
   const [hoveredCard, setHoveredCard] = useState(null);
-  const { shouldReduceEffects, maxParticles, animationDuration } = usePerformanceMode();
+  const { shouldReduceEffects, maxParticles, animationDuration } = useDevicePerformance();
   
-  const bubbleElements = useStableRandom(maxParticles, 4);
-  const questionElements = useStableRandom(shouldReduceEffects ? 5 : 10, 5);
+  const bubbleElements = useConsistentRandomValues(maxParticles, 4);
+  const questionElements = useConsistentRandomValues(shouldReduceEffects ? 5 : 10, 5);
 
   const toggleCard = useCallback((index) => {
     const newOpenIndex = openIndex === index ? null : index;
@@ -135,7 +135,7 @@ export default function FAQ() {
             const IconComponent = faqIcons[idx] || HelpCircle;
 
             return (
-              <CollapsibleCard
+              <ExpandableCard
                 key={faq.q}
                 icon={IconComponent}
                 title={faq.q}
@@ -182,7 +182,7 @@ export default function FAQ() {
                     <ChevronDown className="h-3 w-3 sm:h-4 sm:w-4 text-white/90 rotate-[-90deg] group-hover/btn:translate-x-1 transition-transform duration-300" />
                   </div>
                 </a>
-              </CollapsibleCard>
+              </ExpandableCard>
             );
           })}
         </div>

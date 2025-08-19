@@ -59,12 +59,16 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
+  userScalable: true,
+  viewportFit: 'cover',
+  themeColor: '#0a0a0a',
+  colorScheme: 'dark'
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={inter.variable}>
-      <body className={inter.className}>
+    <html lang="es" className={inter.variable} style={{margin: 0, padding: 0, border: 'none'}}>
+      <body className={inter.className} style={{margin: 0, padding: 0, border: 'none', background: 'rgb(10, 10, 10)'}}>
         {children}
       </body>
     </html>

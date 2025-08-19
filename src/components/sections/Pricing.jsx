@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { Button } from "@/components/ui/Button";
-import useScrollAnimation from "../../hooks/useScrollAnimation";
+import { Button } from "@/components/ui/ReusableComponents";
+import useScrollBasedAnimation from "../../hooks/useScrollBasedAnimation";
 
 const PLANS = [
 	{
@@ -46,7 +46,7 @@ const PLANS = [
 ];
 
 export default function Pricing() {
-	const { ref } = useScrollAnimation();
+	const { ref } = useScrollBasedAnimation();
 
 	return (
 		<section id="precios" className="py-20 bg-white">

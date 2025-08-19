@@ -1,16 +1,16 @@
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/sections/Hero';
-import Services from '@/components/sections/Services';
-import Process from '@/components/sections/Process';
-import CaseStudies from '@/components/sections/CaseStudies';
-import Industries from '@/components/sections/Industries';
-import Integrations from '@/components/sections/Integrations';
-import ROI from '@/components/sections/ROI';
-import Security from '@/components/sections/Security';
+import ServiceOfferings from '@/components/sections/ServiceOfferings';
+import WorkMethodology from '@/components/sections/WorkMethodology';
+import ClientSuccessStories from '@/components/sections/ClientSuccessStories';
+import IndustryExpertise from '@/components/sections/IndustryExpertise';
+import TechnologyIntegrations from '@/components/sections/TechnologyIntegrations';
+import ResultsMetrics from '@/components/sections/ResultsMetrics';
+import DataSecurity from '@/components/sections/DataSecurity';
 import FAQ from '@/components/sections/FAQ';
-import FinalCTA from '@/components/sections/FinalCTA';
-import FloatingButtons from '@/components/common/FloatingButtons';
+import CallToActionSection from '@/components/sections/CallToActionSection';
+import FloatingActionButtons from '@/components/common/FloatingActionButtons';
 
 export default function IndexPage() {
   return (
@@ -18,18 +18,18 @@ export default function IndexPage() {
       <Navbar />
       <main>
         <Hero />
-        <Services />
-        <Process />
-        <CaseStudies />
-        <Industries />
-        <Integrations />
-        <ROI />
-        <Security />
+        <ServiceOfferings />
+        <WorkMethodology />
+        <ClientSuccessStories />
+        <IndustryExpertise />
+        <TechnologyIntegrations />
+        <ResultsMetrics />
+        <DataSecurity />
         <FAQ />
-        <FinalCTA />
+        <CallToActionSection />
       </main>
       <Footer />
-      <FloatingButtons />
+      <FloatingActionButtons />
     </>
   );
 }
