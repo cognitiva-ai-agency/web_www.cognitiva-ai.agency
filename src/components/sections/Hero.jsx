@@ -292,7 +292,7 @@ export default function Hero() {
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    className="h-8 sm:h-8 md:h-10 lg:h-12 xl:h-16 w-auto object-contain transition-all duration-300"
+                    className="h-12 sm:h-12 md:h-10 lg:h-12 xl:h-16 w-auto object-contain transition-all duration-300"
                     loading="lazy"
                   />
                 </div>
